@@ -1,12 +1,12 @@
 local opening = {
   days = {
     [0] = true, -- Sunday
-    [1] = false, -- Monday
+    [1] = true, -- Monday
     [2] = true, -- Tuesday
-    [3] = false, -- Wednsday
+    [3] = true, -- Wednsday
     [4] = true, -- Thursday
-    [5] = false, -- Friday
-    [6] = false, -- Saturday
+    [5] = true, -- Friday
+    [6] = true, -- Saturday
   },
   hours = {
     [0] = false,
@@ -23,14 +23,14 @@ local opening = {
     [11] = false,
     [12] = false,
     [13] = false,
-    [14] = false,
-    [15] = false,
-    [16] = false,
-    [17] = false,
+    [14] = true,
+    [15] = true,
+    [16] = true,
+    [17] = true,
     [18] = true,
     [19] = true,
     [20] = true,
-    [21] = true,
+    [21] = false,
     [22] = false,
     [23] = false,
   },
@@ -38,12 +38,12 @@ local opening = {
 
 local message = {}
 
-message.closing = minetest.settings:get("opening_hours_closing") or "We're closing!"
-message.closed = minetest.settings:get("opening_hours_closed") or "We're closed!"
-message.countdown_pre = minetest.settings:get("opening_hours_countdown_pre") or "Closing in"
-message.countdown_post = minetest.settings:get("opening_hours_countdown_post") or "minute."
-message.countdown_post_plural = minetest.settings:get("opening_hours_countdown_post_plural") or "minutes."
-message.open = minetest.settings:get("opening_hours_open") or "We're open!"
+message.closing = minetest.settings:get("opening_hours_closing") or "Der Server schließt jetzt."
+message.closed = minetest.settings:get("opening_hours_closed") or "Server geschlossen"
+message.countdown_pre = minetest.settings:get("opening_hours_countdown_pre") or "Server wird geschlossen in "
+message.countdown_post = minetest.settings:get("opening_hours_countdown_post") or "Minute."
+message.countdown_post_plural = minetest.settings:get("opening_hours_countdown_post_plural") or "Minuten."
+message.open = minetest.settings:get("opening_hours_open") or "Server geöffnet."
 
 local message_status = {
   open = true,
